@@ -15,6 +15,7 @@ json_header = {'Accept': 'application/json'}
 
 search_label = raw_input("Enter the Label to search: \n")
 
+
 def get_cases_by_label(label_name):
     search_params = {'labels': label_name}
     r = requests.get(cf_site + '/api/v2/cases/search', headers=json_header, params=search_params, auth=(cf_login, cf_password))
@@ -63,10 +64,10 @@ def get_cases_by_label(label_name):
 
     output = open('Feedback.txt', 'w')
     output.write("FEEDBACK RESPONSE FOR LABEL (" + label_name.upper() + ") - " + time.strftime("%d/%m/%Y %H:%M:%S"))
-    output.write('\n')
+    output.write('\n\n')
     output.write('(Number of cases found = ' + counter1 + ')')
     output.write('\n================================================================================\n')
-    output.write('\n')
+    output.write('\n\n')
 
     for finished_message in trimmed_messages:
         output.write(finished_message.encode('utf-8'))
