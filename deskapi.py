@@ -59,7 +59,7 @@ def get_cases_by_label(label_name):
         counter += 1
 
         trimmed_messages.append(first_part_of_message.strip())
-    print counter
+    # print counter
 
     counter1 = str(counter)
 
