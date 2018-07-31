@@ -26,7 +26,7 @@ def get_cases_by_label(label_name):
     message_links = []
     for case in js['_embedded']['entries']:
         message_links.append(case['_links']['message']['href'])
-    print(message_links)
+    # print(message_links)
 
     messages = []
     for link in message_links:
@@ -40,9 +40,10 @@ def get_cases_by_label(label_name):
 
     trimmed_messages = []
 
-    counter = 0
+    counter = 1
+
     for message in messages:
-        first_part_of_message = message\
+        first_part_of_message = str(counter) + ". " + message\
             .split('-App-')[0]\
             .split('--')[0] \
             .split('Thank you')[0] \
@@ -84,8 +85,4 @@ def get_cases_by_label(label_name):
 
 get_cases_by_label(search_label)
 
-#INA - Offline reading problems
-#ANA - Offline reading problems
-#ANA - General feedback
-#IDE - Missing crosswords on Mondays
 
