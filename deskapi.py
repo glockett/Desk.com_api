@@ -38,6 +38,8 @@ def get_cases_by_label(label_name):
             print(json.dumps(js, indent=2))
 
     trimmed_messages = []
+
+    counter = 0
     for message in messages:
         first_part_of_message = message\
             .split('-App-')[0]\
@@ -52,10 +54,17 @@ def get_cases_by_label(label_name):
             .split('The diagnostic info below will help us with resolving your problem:')[0] \
             .split('The information below will help us to better understand your query:')[0]
 
+        counter += 1
+
         trimmed_messages.append(first_part_of_message.strip())
+    print counter
+
+    counter1 = str(counter)
 
     output = open('Feedback.txt', 'w')
     output.write("FEEDBACK RESPONSE FOR LABEL (" + label_name.upper() + ") - " + time.strftime("%d/%m/%Y %H:%M:%S"))
+    output.write('\n')
+    output.write('(Number of cases found = ' + counter1 + ')')
     output.write('\n================================================================================\n')
     output.write('\n')
 
@@ -71,17 +80,11 @@ def get_cases_by_label(label_name):
     print 'Search completed - please check text file!'
     print ('\n')
 
-#INA - Offline reading problems
-#ANA - Offline reading problems
-#ANA - General feedback
-
-
-
 
 get_cases_by_label(search_label)
 
-
-
-
-
+#INA - Offline reading problems
+#ANA - Offline reading problems
+#ANA - General feedback
+#IDE - Missing crosswords on Mondays
 
