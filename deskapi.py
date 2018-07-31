@@ -2,10 +2,7 @@ import json
 import requests
 import time
 
-<<<<<<< HEAD
 
-=======
->>>>>>> github/master
 # Set conf to environment from config.json (test, android or ios)
 with open('config.json') as json_data:
     data = json.load(json_data)
@@ -46,15 +43,12 @@ def get_cases_by_label(label_name):
             .split('-App-')[0]\
             .split('--')[0] \
             .split('Thank you')[0] \
-<<<<<<< HEAD
             .split('Kind regards')[0] \
             .split('Extra Data:')[0] \
             .split('System information:')[0] \
             .split('Sent from my iPad')[0] \
-=======
             .split('Regards')[0] \
             .split('Extra Data:')[0] \
->>>>>>> github/master
             .split('The diagnostic info below will help us with resolving your problem:')[0] \
             .split('The information below will help us to better understand your query:')[0]
 
@@ -73,7 +67,6 @@ def get_cases_by_label(label_name):
 
     output.close()
 
-<<<<<<< HEAD
     print ('\n')
     print 'Search completed - please check text file!'
     print ('\n')
@@ -81,12 +74,8 @@ def get_cases_by_label(label_name):
 #INA - Offline reading problems
 #ANA - Offline reading problems
 #ANA - General feedback
-=======
-    print 'Search completed - please check text file!'
 
-#INA - Offline reading problems
-#ANA - Offline reading problems
->>>>>>> github/master
+
 
 
 get_cases_by_label(search_label)
