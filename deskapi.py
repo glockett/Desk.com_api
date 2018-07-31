@@ -72,9 +72,9 @@ def get_cases_by_label(label_name):
 
     for finished_message in trimmed_messages:
         output.write(finished_message.encode('utf-8'))
-        output.write('\n')
+        output.write('\n\n')
         output.write('*' * 40 + '\n')
-        output.write('\n')
+        output.write('\n\n')
 
     output.close()
 
@@ -84,5 +84,3 @@ def get_cases_by_label(label_name):
 
 
 get_cases_by_label(search_label)
-
-
